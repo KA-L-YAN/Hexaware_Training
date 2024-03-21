@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Luffy - A boy from small town who wants to become The Pirate King
 Zoro - One who want to be the strongest Swordsman
 Sanji - Who wants to visit All Blue
@@ -20,3 +21,8 @@ Theme
 
 The theme revolves around powers called Haki and Devil fruits.
 >>>>>>> theme
+=======
+Conflicts
+
+The main antagonists are Navi, World Government, and pirate named BlackBeard.
+>>>>>>> conflict
