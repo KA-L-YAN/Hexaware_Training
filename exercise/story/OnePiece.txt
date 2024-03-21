@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Luffy - A boy from small town who wants to become The Pirate King
 Zoro - One who want to be the strongest Swordsman
 Sanji - Who wants to visit All Blue
@@ -14,3 +15,8 @@ setting
 
 The story revolves around a teenager named Luffy who wants to become The Pirate King. He goes on a Journey to find crewmates to start an adventure to find the ONE PIECE that was left by the previous Pirate King
 >>>>>>> setting
+=======
+Theme
+
+The theme revolves around powers called Haki and Devil fruits.
+>>>>>>> theme
