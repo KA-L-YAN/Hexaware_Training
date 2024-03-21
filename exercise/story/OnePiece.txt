@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 Luffy - A boy from small town who wants to become The Pirate King
 Zoro - One who want to be the strongest Swordsman
 Sanji - Who wants to visit All Blue
 BlackBeard - Unknown motives.
+=======
+plot
+
+The plot revolves around luffy and his crew who sets on an adventure to find One Piece in Grand Line...
+>>>>>>> plot
