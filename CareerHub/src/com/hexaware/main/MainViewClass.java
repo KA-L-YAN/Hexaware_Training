@@ -29,12 +29,12 @@ static Scanner sc = new Scanner(System.in);
 		do
 		{
 			System.out.println("Enter an Option : ");
-			System.out.println("1. Create Profile");
-			System.out.println("2. Get All Applicants");
-			System.out.println("3. Apply for a Job");
-			System.out.println("4. Add a new Company");
-			System.out.println("5. Get All Companies");
-			System.out.println("6. Post job");
+			System.out.println("1. Create Profile (Applicant)");
+			System.out.println("2. Get All Applicants (Applicant)");
+			System.out.println("3. Apply for a Job (Applicant)");
+			System.out.println("4. Add a new Company [Company]");
+			System.out.println("5. Get All Companies [Company]");
+			System.out.println("6. Post job [Company]");
 			System.out.println("7. Create new Job Appliction");
 			System.out.println("8. Get Job by job ID");
 			System.out.println("9. Create new Job");
@@ -130,8 +130,10 @@ static Scanner sc = new Scanner(System.in);
 				System.out.println("Enter Job Title:");
 				String title = sc.next();
 				System.out.println("Give a brief description about the job:");
+				sc.nextLine();
 				String description = sc.next();
 				System.out.println("Enter Job Location:");
+				sc.nextLine();
 				String location = sc.next();
 				System.out.println("Enter salary:");
 				Double salary = sc.nextDouble();
@@ -171,8 +173,13 @@ static Scanner sc = new Scanner(System.in);
 			{
 				System.out.println("Enter Job ID: ");
 				int jid = sc.nextInt();
+				List<JobApplication> applications = new ArrayList<>();
+				applications = dm.getApplicationsForJob(jid);
+				Iterator<JobApplication> it = applications.iterator();
+				while(it.hasNext()) {
+					System.out.println(it.next());
+				}
 				
-				dm.getApplicationsForJob(jid);
 				break;
 			}
 			case 9:
