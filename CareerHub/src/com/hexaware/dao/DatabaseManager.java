@@ -74,7 +74,9 @@ public class DatabaseManager {
             ps.setString(4, job.getJobDescription());
             ps.setString(5, job.getJobLocation());
             ps.setDouble(6,job.getSalary());
-            ps.setObject(7, job.getJobType());
+            JobType  j =job.getJobType();
+            String s = j.toString();
+            ps.setObject(7, s);
             ps.setObject(8, job.getPostedDate());
             int rows = ps.executeUpdate();
             if(rows>0) System.out.println(rows+" inserted successfully.");
@@ -131,7 +133,7 @@ public class DatabaseManager {
         List<JobListing> jobListings = new ArrayList<>();
         try {
             stmt = con.createStatement();
-            rs = stmt.executeQuery("select * from joblistings;");
+            rs = stmt.executeQuery("select * from joblisting;");
             while (rs.next()) {
                 JobListing job = new JobListing();
                 Company comp = new Company();
@@ -201,7 +203,7 @@ public class DatabaseManager {
     public List<JobApplication> getApplicationsForJob(int jobId) {
         List<JobApplication> jobApplications = new ArrayList<>();
         try {
-            ps = con.prepareStatement("SELECT * FROM Applications WHERE job_id = ?");
+            ps = con.prepareStatement("select * from jobapplication where jobid = ?");
             ps.setInt(1, jobId);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -217,6 +219,8 @@ public class DatabaseManager {
             	LocalDate date = LocalDate.parse(s);
             	ja.setApplicationDate(date);
             	ja.setCoverLetter(rs.getString("coverletter"));
+            	
+            	jobApplications.add(ja);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -263,8 +267,8 @@ public class DatabaseManager {
 			ps.setString(4, jobLocation);
 			ps.setDouble(5, salary);
 			jobType = jobType.toUpperCase();
-			JobType jType = JobType.valueOf(jobType);
-			ps.setObject(6, jType);
+			//JobType jType = JobType.valueOf(jobType);
+			ps.setObject(6, jobType);
 			LocalDate date = LocalDate.now();
 			ps.setObject(7, date);
 			sc.close();
